@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AB AROMAS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+
+    <h1>🌿 AB AROMAS</h1>
+
+    <div class="header-buttons">
+        <button onclick="login()">Login</button>
+        <button id="btnAdmin" class="hidden" onclick="toggleAdmin()">Admin</button>
+        <button onclick="logout()">Salir</button>
+    </div>
+
+</header>
+
+
+<div class="container" id="productos"></div>
+
+
+<div class="cart">
+
+    <h2>🛒 Carrito</h2>
+
+    <div id="carrito"></div>
+
+    <div id="total"></div>
+
+    <button onclick="enviarWhatsApp()">
+        Enviar por WhatsApp
+    </button>
+
+</div>
+
+
+<!-- PANEL ADMIN -->
+
+<div id="adminPanel" class="admin hidden">
+
+    <h2>Panel Admin</h2>
+
+    <input type="text" id="nombre" placeholder="Nombre">
+
+    <input type="number" id="precio" placeholder="Precio">
+
+    <input type="text" id="descripcion" placeholder="Descripción">
+
+    <input type="file" id="imagenFile" accept="image/*">
+
+    <input type="text" id="fragancias" placeholder="Fragancias (separadas por coma)">
+
+    <button onclick="guardarProducto()">
+        Guardar producto
+    </button>
+
+    <h3>Productos existentes</h3>
+
+    <div id="listaProductos"></div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

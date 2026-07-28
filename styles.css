@@ -1,0 +1,657 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+
+    font-family: 'Segoe UI', sans-serif;
+
+    margin: 0;
+
+    background: #faf7f2;
+
+    color: #3b3028;
+
+}
+
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+
+    background: linear-gradient(135deg, #5b4636, #8b6f52);
+
+    color: white;
+
+    height: 70px;
+
+    padding: 10px 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 2000;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+
+}
+
+
+header h1 {
+
+    margin: 0;
+
+    font-size: 24px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+}
+
+
+
+.header-buttons {
+
+    display: flex;
+
+    gap: 8px;
+
+}
+
+
+
+.header-buttons button {
+
+    padding: 8px 14px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #faf7f2;
+
+    color: #5b4636;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .2s;
+
+}
+
+
+
+.header-buttons button:hover {
+
+    background: #ead8c2;
+
+    transform: translateY(-2px);
+
+}
+
+
+
+/* =========================
+   CONTENEDOR PRODUCTOS
+========================= */
+
+.container {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+
+    gap: 25px;
+
+    padding: 30px;
+
+    margin-left: 320px;
+
+    margin-right: 360px;
+
+}
+
+
+
+/* =========================
+   PRODUCTOS
+========================= */
+
+.product {
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 18px;
+
+    box-shadow: 0 8px 25px rgba(80,50,20,0.08);
+
+    transition: .25s;
+
+}
+
+
+
+.product:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow: 0 15px 35px rgba(80,50,20,0.15);
+
+}
+
+
+
+.product img {
+
+    width: 100%;
+
+    height: 190px;
+
+    object-fit: cover;
+
+    border-radius: 14px;
+
+}
+
+
+
+.product h3 {
+
+    margin: 15px 0 5px;
+
+    font-size: 18px;
+
+    color: #4a3728;
+
+}
+
+
+
+.product p {
+
+    font-size: 14px;
+
+    color: #76695e;
+
+}
+
+
+
+.product b,
+.price {
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    color: #8b5e34;
+
+}
+
+
+
+.product select,
+.product button {
+
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    border: 1px solid #ddd;
+
+}
+
+
+
+.product button {
+
+    background: #8b5e34;
+
+    color: white;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+}
+
+
+
+.product button:hover {
+
+    background: #6f4828;
+
+}
+
+
+
+/* =========================
+   CARRITO
+========================= */
+
+.cart {
+
+    position: fixed;
+
+    right: 20px;
+
+    top: 90px;
+
+    bottom: 20px;
+
+    width: 330px;
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+
+    overflow-y: auto;
+
+    z-index: 1500;
+
+}
+
+
+
+.cart h2 {
+
+    text-align: center;
+
+    color: #5b4636;
+
+    margin-top: 5px;
+
+}
+
+
+
+/* ITEM CARRITO */
+
+.cart-item {
+
+    display: flex;
+
+    gap: 12px;
+
+    background: #faf7f2;
+
+    padding: 12px;
+
+    border-radius: 12px;
+
+    margin-bottom: 12px;
+
+}
+
+
+
+.cart-img {
+
+    width: 60px;
+
+    height: 60px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+}
+
+
+
+.cart-info {
+
+    flex: 1;
+
+}
+
+
+
+.cart-info strong {
+
+    display: block;
+
+    font-size: 15px;
+
+    color: #4a3728;
+
+}
+
+
+
+.cart-info span {
+
+    font-size: 13px;
+
+    color: #76695e;
+
+}
+
+
+
+.cart-controls {
+
+    display: flex;
+
+    gap: 5px;
+
+    margin-top: 8px;
+
+}
+
+
+
+.cart-controls button {
+
+    border: none;
+
+    padding: 5px 10px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    background: #8b5e34;
+
+    color: white;
+
+}
+
+
+
+.delete-btn {
+
+    background: #c0392b !important;
+
+}
+
+
+
+/* TOTAL */
+
+#total {
+
+    margin-top: 15px;
+
+    text-align: center;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color: #5b4636;
+
+}
+
+
+
+/* WHATSAPP */
+
+.cart button {
+
+    width: 100%;
+
+    padding: 14px;
+
+    margin-top: 12px;
+
+    background: #25D366;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+}
+
+
+
+.cart button:hover {
+
+    background: #1ebe5d;
+
+}
+
+
+
+/* =========================
+   PANEL ADMIN
+========================= */
+
+.admin {
+
+    position: fixed;
+
+    top: 90px;
+
+    bottom: 20px;
+
+    left: 20px;
+
+    width: 280px;
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.12);
+
+    overflow-y: auto;
+
+    z-index: 1500;
+
+}
+
+
+
+.admin h2 {
+
+    text-align: center;
+
+    color: #5b4636;
+
+}
+
+
+
+.admin input {
+
+    width: 100%;
+
+    margin-bottom: 12px;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    border: 1px solid #ddd;
+
+}
+
+
+
+.admin button {
+
+    width: 100%;
+
+    padding: 12px;
+
+    margin-bottom: 10px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #8b5e34;
+
+    color: white;
+
+    cursor: pointer;
+
+}
+
+
+
+.admin button:hover {
+
+    background: #6f4828;
+
+}
+
+
+
+.admin-item {
+
+    background: #faf7f2;
+
+    padding: 12px;
+
+    border-radius: 12px;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.admin-actions {
+
+    display: flex;
+
+    gap: 6px;
+
+    margin-top: 10px;
+
+}
+
+
+
+.admin-actions button {
+
+    padding: 7px;
+
+}
+
+
+
+.admin-actions button:last-child {
+
+    background: #c0392b;
+
+}
+
+
+
+/* =========================
+   OCULTO
+========================= */
+
+.hidden {
+
+    display: none;
+
+}
+
+.cart-controls {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-top:10px;
+
+}
+
+
+.cart-controls span {
+
+    min-width:25px;
+
+    text-align:center;
+
+    font-weight:bold;
+
+}
+
+
+.cart-controls button {
+
+    width:30px;
+
+    height:30px;
+
+    padding:0;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#8b5e34;
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+
+.cart-controls button:hover {
+
+    background:#6f4828;
+
+}
+
+
+.cart-controls .delete-btn {
+
+    background:#c0392b;
+
+    width:35px;
+
+}
